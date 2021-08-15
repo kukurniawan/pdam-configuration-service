@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Pdam.Common.Shared.State;
 
 namespace Pdam.Configuration.Service.DataContext
 {
@@ -17,6 +18,8 @@ namespace Pdam.Configuration.Service.DataContext
         public string Logo { get; set; }
         public string FinanceHead { get; set; }
         public string DirectorName { get; set; }
+        public SubscriptionState Subscription { get; set; }
+        public ActiveState Status { get; set; }
         public IEnumerable<Branch> Branches { get; set; }
     }
 }

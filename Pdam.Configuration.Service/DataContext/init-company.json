@@ -9,6 +9,8 @@
     "PaymentEndPoint": "bayar.pdam-abc.com",
     "Logo": "pdam-abc.jpg",
     "FinanceHead": "Udin Markudin, SE.",
-    "DirectorName": "Uus Markuus, SE., Msc."
+    "DirectorName": "Uus Markuus, SE., Msc.",
+    "Subscription": 2,
+    "Status": 0
   }
 ]

@@ -1,0 +1,4 @@
+[submodule "Pdam.Configuration.Service/Pdam.Common.Shared"]
+	path = Pdam.Configuration.Service/Pdam.Common.Shared
+	url = git@github.com:kurniawirawan/pdam-common-shared.git
+	branch = develop

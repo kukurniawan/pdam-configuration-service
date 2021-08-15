@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Pdam.Common.Shared.Fault;
@@ -11,10 +12,12 @@ namespace Pdam.Configuration.Service.Features.Company.Get
     public class Handler : IRequestHandler<Request, Response>
     {
         private readonly ConfigContext _context;
+        private readonly IMapper _mapper;
 
-        public Handler(ConfigContext context)
+        public Handler(ConfigContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
         public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
         {
@@ -31,18 +34,7 @@ namespace Pdam.Configuration.Service.Features.Company.Get
                         StatusCode = HttpStatusCode.NotFound
                     }
                 };
-            return new Response
-            {
-                Address = company.Address,
-                City = company.City,
-                Logo = company.Logo,
-                CompanyCode = company.CompanyCode,
-                CompanyName = company.CompanyName,
-                CompanyWeb = company.CompanyWeb,
-                FinanceHead = company.FinanceHead,
-                CompanyLegalName = company.CompanyLegalName,
-                PaymentEndPoint = company.PaymentEndPoint
-            };
+            return _mapper.Map<Response>(company);
         }
     }
 }

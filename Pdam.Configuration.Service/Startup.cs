@@ -34,6 +34,8 @@ namespace Pdam.Configuration.Service
             services.AddDbContext<ConfigContext>(c =>
                 c.UseNpgsql(Environment.GetEnvironmentVariable("PdamConfigurationConnectionString") ?? string.Empty));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(TransactionDecorator<,>));
+            services.AddAutoMapper(typeof(CompanyProfile));
+            services.AddMediatR(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Pdam.Configuration.Service", Version = "v1"});

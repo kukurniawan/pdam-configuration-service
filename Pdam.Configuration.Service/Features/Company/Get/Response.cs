@@ -1,4 +1,5 @@
 ﻿using Pdam.Common.Shared.Http;
+using Pdam.Common.Shared.State;
 
 namespace Pdam.Configuration.Service.Features.Company.Get
 {
@@ -13,5 +14,8 @@ namespace Pdam.Configuration.Service.Features.Company.Get
         public string PaymentEndPoint { get; set; }
         public string Logo { get; set; }
         public string FinanceHead { get; set; }
+        public string DirectorName { get; set; }
+        public SubscriptionState Subscription { get; set; }
+        public ActiveState Status { get; set; }
     }
 }

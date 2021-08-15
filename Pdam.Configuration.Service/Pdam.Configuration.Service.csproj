@@ -18,4 +18,10 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Features\Company\Add" />
+      <Folder Include="Features\Company\List" />
+      <Folder Include="Features\Company\Update" />
+    </ItemGroup>
+
 </Project>

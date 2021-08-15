@@ -16,6 +16,7 @@ namespace Pdam.Configuration.Service.DataContext
         public string PaymentEndPoint { get; set; }
         public string Logo { get; set; }
         public string FinanceHead { get; set; }
+        public string DirectorName { get; set; }
         public IEnumerable<Branch> Branches { get; set; }
     }
 }

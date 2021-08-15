@@ -26,5 +26,12 @@ namespace Pdam.Configuration.Service.Controllers
             });
             return ActionResultMapper.ToActionResult(response);
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] Features.Company.Add.Request request)
+        {
+            var response = await _mediator.Send(request);
+            return ActionResultMapper.ToActionResult(response);
+        }
     }
 }

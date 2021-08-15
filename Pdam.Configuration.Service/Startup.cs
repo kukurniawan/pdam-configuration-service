@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Pdam.Configuration.Service.DataContext;
 
 namespace Pdam.Configuration.Service
 {
@@ -27,6 +29,8 @@ namespace Pdam.Configuration.Service
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<ConfigContext>(c =>
+                c.UseNpgsql(Environment.GetEnvironmentVariable("PdamConfigurationConnectionString") ?? string.Empty));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Pdam.Configuration.Service", Version = "v1"});
@@ -42,14 +46,14 @@ namespace Pdam.Configuration.Service
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Pdam.Configuration.Service v1"));
             }
-
-            app.UseHttpsRedirection();
-
+            app.MigrateDatabase();
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            
         }
     }
 }

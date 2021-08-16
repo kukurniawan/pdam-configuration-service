@@ -56,6 +56,7 @@ namespace Pdam.Configuration.Service
             services.AddMediatR(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
+                c.CustomSchemaIds(type => type.ToString());
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Pdam.Configuration.Service", Version = "v1"});
             });
         }

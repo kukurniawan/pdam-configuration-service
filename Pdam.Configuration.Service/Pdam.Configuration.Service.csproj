@@ -31,6 +31,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Features\Branch\Delete" />
+      <Folder Include="Features\Branch\Get" />
+      <Folder Include="Features\Branch\List" />
+      <Folder Include="Features\Branch\Update" />
       <Folder Include="Features\Company\List" />
     </ItemGroup>
 

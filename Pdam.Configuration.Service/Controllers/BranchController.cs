@@ -50,5 +50,16 @@ namespace Pdam.Configuration.Service.Controllers
             var response = await _mediator.Send(request);
             return ActionResultMapper.ToActionResult(response);
         }
+        
+        [HttpDelete("{companyCode}/{branchCode}")]
+        public async Task<IActionResult> Delete([FromRoute] string companyCode, [FromRoute] string branchCode)
+        {
+            var response = await _mediator.Send(new Features.Branch.Delete.Request
+            {
+                BranchCode = branchCode,
+                CompanyCode = companyCode
+            });
+            return ActionResultMapper.ToActionResult(response);
+        }
     }
 }

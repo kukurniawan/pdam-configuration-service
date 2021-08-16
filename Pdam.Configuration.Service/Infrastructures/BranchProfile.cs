@@ -8,6 +8,8 @@ namespace Pdam.Configuration.Service.Infrastructures
         {
             CreateMap<DataContext.Branch, Features.Branch.Get.Response>();
             CreateMap<Features.Branch.Add.Request, DataContext.Branch>();
+            CreateMap<Features.Branch.Update.Request, DataContext.Branch>()
+                .ForMember(d=>d.Status, o => o.MapFrom(s=>s.Status));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 
 namespace Pdam.Configuration.Service.Infrastructures
 {
@@ -7,6 +8,6 @@ namespace Pdam.Configuration.Service.Infrastructures
         public BranchProfile()
         {
             CreateMap<DataContext.Branch, Features.Branch.Get.Response>();
-         }
+        }
     }
 }

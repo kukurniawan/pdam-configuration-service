@@ -26,5 +26,15 @@ namespace Pdam.Configuration.Service.Controllers
             });
             return ActionResultMapper.ToActionResult(response);
         }
+        
+        [HttpGet("{companyCode}")]
+        public async Task<IActionResult> Get([FromRoute] string companyCode)
+        {
+            var response = await _mediator.Send(new Features.Branch.List.Request
+            {
+                CompanyCode = companyCode
+            });
+            return ActionResultMapper.ToActionResult(response);
+        }
     }
 }

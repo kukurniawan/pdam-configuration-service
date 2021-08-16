@@ -28,7 +28,7 @@ namespace Pdam.Configuration.Service.DataContext
                     .WithMany(c => c.Branches)
                     .HasForeignKey(c => c.CompanyCode));
 
-            modelBuilder.Entity<Branch>(x => x.HasIndex(c => new {c.BranchName, c.CompanyCode}).IsUnique());
+            modelBuilder.Entity<Branch>(x => x.HasIndex(c => new {c.BranchCode, c.CompanyCode}).IsUnique());
         }
     }
 }

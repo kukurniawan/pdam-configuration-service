@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using Pdam.Common.Shared.Http;
 using Pdam.Common.Shared.State;
 
-namespace Pdam.Configuration.Service.DataContext
+namespace Pdam.Configuration.Service.Features.Company.Get
 {
-    public class Company
+    public class Response : BaseResponse
     {
-        [Key]
         public string CompanyCode { get; set; }
         public string CompanyLegalName { get; set; }
         public string CompanyName { get; set; }
@@ -20,6 +17,5 @@ namespace Pdam.Configuration.Service.DataContext
         public string DirectorName { get; set; }
         public SubscriptionState Subscription { get; set; }
         public ActiveState Status { get; set; }
-        public IEnumerable<Branch> Branches { get; set; }
     }
 }

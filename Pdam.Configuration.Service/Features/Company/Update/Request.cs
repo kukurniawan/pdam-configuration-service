@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Pdam.Common.Shared.State;
+﻿using MediatR;
 
-namespace Pdam.Configuration.Service.DataContext
+namespace Pdam.Configuration.Service.Features.Company.Update
 {
-    public class Company
+    public class Request : IRequest<Response>
+
     {
-        [Key]
         public string CompanyCode { get; set; }
         public string CompanyLegalName { get; set; }
         public string CompanyName { get; set; }
@@ -18,8 +15,7 @@ namespace Pdam.Configuration.Service.DataContext
         public string Logo { get; set; }
         public string FinanceHead { get; set; }
         public string DirectorName { get; set; }
-        public SubscriptionState Subscription { get; set; }
-        public ActiveState Status { get; set; }
-        public IEnumerable<Branch> Branches { get; set; }
+        public int Subscription { get; set; }
+        public int Status { get; set; }
     }
 }

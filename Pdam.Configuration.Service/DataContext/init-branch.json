@@ -1,0 +1,22 @@
+﻿[
+  {
+    "Id": "c0f8d02b-191a-400b-bf21-cb0310488f31",
+    "CompanyCode": "ABC",
+    "Status": "0",
+    "BranchCode": "ABC-1",
+    "BranchName": "CABANG 1",
+    "Address": "Jl. Cirame 22",
+    "City": "Bandung",
+    "BranchHeadName": "Kang Dadang"
+  },
+  {
+    "Id": "9b32e3cb-2e0a-4064-a049-1842d5c65f5e",
+    "CompanyCode": "ABC",
+    "Status": "0",
+    "BranchCode": "ABC-2",
+    "BranchName": "CABANG 2",
+    "Address": "Jl. Rayut 29",
+    "City": "Bandung",
+    "BranchHeadName": "Neng Ijem"
+  }
+]

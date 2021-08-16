@@ -1,0 +1,16 @@
+﻿[
+  {
+    "CompanyCode": "ABC",
+    "CompanyLegalName": "PT. ABC LEGAL",
+    "CompanyName": "PDAM ABC",
+    "Address": "Jl. Cibiru 256",
+    "City": "Bandung",
+    "CompanyWeb": "www.pdam-abc.com",
+    "PaymentEndPoint": "bayar.pdam-abc.com",
+    "Logo": "pdam-abc.jpg",
+    "FinanceHead": "Udin Markudin, SE.",
+    "DirectorName": "Uus Markuus, SE., Msc.",
+    "Subscription": 2,
+    "Status": 0
+  }
+]

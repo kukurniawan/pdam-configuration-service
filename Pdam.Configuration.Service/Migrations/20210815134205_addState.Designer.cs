@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Pdam.Configuration.Service.DataContext;
@@ -9,9 +10,10 @@ using Pdam.Configuration.Service.DataContext;
 namespace Pdam.Configuration.Service.Migrations
 {
     [DbContext(typeof(ConfigContext))]
-    partial class ConfigContextModelSnapshot : ModelSnapshot
+    [Migration("20210815134205_addState")]
+    partial class addState
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,12 +30,6 @@ namespace Pdam.Configuration.Service.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
-                    b.Property<string>("BranchCode")
-                        .HasColumnType("text");
-
-                    b.Property<string>("BranchHeadName")
-                        .HasColumnType("text");
-
                     b.Property<string>("BranchName")
                         .HasColumnType("text");
 
@@ -43,14 +39,11 @@ namespace Pdam.Configuration.Service.Migrations
                     b.Property<string>("CompanyCode")
                         .HasColumnType("text");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CompanyCode");
 
-                    b.HasIndex("BranchCode", "CompanyCode")
+                    b.HasIndex("BranchName", "CompanyCode")
                         .IsUnique();
 
                     b.ToTable("Branches");

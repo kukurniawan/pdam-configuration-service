@@ -1,12 +1,11 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using Pdam.Common.Shared.Http;
 using Pdam.Common.Shared.State;
 
-namespace Pdam.Configuration.Service.DataContext
+namespace Pdam.Configuration.Service.Features.Branch.Get
 {
-    public class Branch
+    public class Response : BaseResponse
     {
-        [Key]
         public Guid Id { get; set; }
         public string CompanyCode { get; set; }
         public ActiveState Status { get; set; }
@@ -15,6 +14,5 @@ namespace Pdam.Configuration.Service.DataContext
         public string Address { get; set; }
         public string City { get; set; }
         public string BranchHeadName { get; set; }
-        public Company Company { get; set; }
     }
 }

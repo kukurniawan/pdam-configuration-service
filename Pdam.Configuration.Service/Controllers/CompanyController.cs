@@ -33,5 +33,12 @@ namespace Pdam.Configuration.Service.Controllers
             var response = await _mediator.Send(request);
             return ActionResultMapper.ToActionResult(response);
         }
+        
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] Features.Company.Update.Request request)
+        {
+            var response = await _mediator.Send(request);
+            return ActionResultMapper.ToActionResult(response);
+        }
     }
 }

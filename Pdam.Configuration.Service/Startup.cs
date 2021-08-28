@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Pdam.Common.Shared.Fault;
+using Pdam.Common.Shared.Helper;
 using Pdam.Common.Shared.Infrastructure;
 using Pdam.Common.Shared.Logging;
 using Pdam.Configuration.Service.DataContext;
@@ -34,11 +35,7 @@ namespace Pdam.Configuration.Service
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                .AddNewtonsoftJson(o =>
-                {
-                    o.SerializerSettings.DateFormatString = "yyyy'-'MM'-'dd' 'HH':'mm':'ss";
-                    o.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-                });
+                .AddDateTimeFormat();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IApiLogger, ApiLogger>();
             services.AddDbContext<ConfigContext>(c =>
